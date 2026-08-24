@@ -352,7 +352,34 @@
     line("嫩油条", "哥哥，我只占左边一点点。新人需要保护。", { char: "nenyoutiao" }),
     line("寒林", "打了四千场的新人？", { char: "hanlin" }),
     line("年糕", "先别围。他还没吃饭。", { char: "niangao" }),
-    lin…615 tokens truncated…cument.querySelector("#route-chip"), routeChipName: document.querySelector("#route-chip strong"),
+    line("稻花香", "我带了草莓。主力特供。", { char: "daohuaxiang" }),
+    line("知恩", "咖啡是无糖的。今晚最多一杯。", { char: "zhien" }),
+    line("武松", "外套给他。结束后外面降温。", { char: "wusong" }),
+    line("三米", "伞在我这里。我送。", { char: "sanmi" }),
+    line("湫澄", "【奶蛙抱着另一只奶蛙，脚下写着“已驻守”.gif】", { char: "qiucheng", sticker: true }),
+    line("胖虎", "不是，他这又什么意思？", { char: "panghu" }),
+    line("暴龙", "他说今晚谁也别想把我抢走。", { char: "dragon" }),
+    line("旁白", "九道视线同时落到湫澄身上。湫澄想了想，又补发一只戴墨镜的奶蛙。"),
+    line("湫澄", "【奶蛙戴上墨镜，背后爆炸.gif】", { char: "qiucheng", sticker: true }),
+    line("暴龙", "别解读了。这张他自己也不知道什么意思。", { char: "dragon" }),
+    line("旁白", "倒计时归零。十个人同时闭嘴，又同时把椅子往暴龙身边挪了一寸。"),
+    line("暴龙", "城还没打下来，就开始抢指挥？", { char: "dragon" }),
+    line("旁白", "屏幕上的行军线汇成一束光。暴龙摘下耳机，慢慢扫过面前十张各怀心思的脸。")
+  ];
+
+  const endingChoices = [
+    { key: "closest", label: "点名羁绊最高的人送自己回去", hint: "单人开放结局" },
+    { key: "all", label: "都留下，先陪我打完这座城", hint: "全员修罗场结局" },
+    { key: "self", label: "今晚谁也不选，我自己走", hint: "暴龙主导结局" }
+  ];
+
+  const dom = {
+    title: document.querySelector("#title-screen"), game: document.querySelector("#game-screen"),
+    newGame: document.querySelector("#new-game-btn"), continueBtn: document.querySelector("#continue-btn"), about: document.querySelector("#about-btn"),
+    chapter: document.querySelector("#chapter-kicker"), sceneTitle: document.querySelector("#scene-title"),
+    stage: document.querySelector("#stage"), hub: document.querySelector("#hub-panel"), routeGrid: document.querySelector("#route-grid"), routeCount: document.querySelector("#route-count"), finaleBtn: document.querySelector("#finale-btn"),
+    portrait: document.querySelector("#portrait"), portraitGlyph: document.querySelector(".avatar-glyph"), portraitName: document.querySelector(".portrait-nameplate strong"), portraitRole: document.querySelector(".portrait-nameplate span"),
+    routeChip: document.querySelector("#route-chip"), routeChipName: document.querySelector("#route-chip strong"),
     speaker: document.querySelector("#speaker"), dialogueBox: document.querySelector("#dialogue-box"), dialogueText: document.querySelector("#dialogue-text"), choices: document.querySelector("#choice-list"), next: document.querySelector("#next-indicator"),
     auto: document.querySelector("#auto-btn"), skip: document.querySelector("#skip-btn"),
     status: document.querySelector("#status-btn"), log: document.querySelector("#log-btn"), save: document.querySelector("#save-btn"), load: document.querySelector("#load-btn"), home: document.querySelector("#home-btn"),
@@ -833,4 +860,3 @@
   dom.continueBtn.disabled = !hasSave();
   showScreen("title");
 })();
-
