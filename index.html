@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17132a">
+  <title>今夜，谁来守城｜校园同盟 Galgame</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="app" aria-live="polite">
+    <section id="title-screen" class="screen title-screen">
+      <div class="title-sky" aria-hidden="true">
+        <span class="star star-a"></span>
+        <span class="star star-b"></span>
+        <span class="star star-c"></span>
+        <span class="moon"></span>
+        <span class="campus campus-back"></span>
+        <span class="campus campus-front"></span>
+      </div>
+      <div class="title-card">
+        <p class="eyebrow">南川大学 · 成年玩家同盟</p>
+        <h1>今夜，谁来守城</h1>
+        <p class="subtitle">十攻一受 · 校园同盟视觉小说</p>
+        <div class="seal" aria-hidden="true"><span>率</span><small>心动赛季</small></div>
+        <p class="title-copy">游戏里的地可以分。至于暴龙——指挥权从来都在他自己手里。</p>
+        <div class="title-actions">
+          <button id="new-game-btn" class="primary-btn">开始新赛季</button>
+          <button id="continue-btn" class="secondary-btn">读取存档</button>
+          <button id="about-btn" class="ghost-btn">玩法说明</button>
+        </div>
+        <p class="age-note">所有登场角色均为年满 20 岁的成年人 · 内容含暧昧描写</p>
+      </div>
+      <div class="title-frog" aria-label="奶蛙挂件">
+        <span class="frog-eye left"></span><span class="frog-eye right"></span><span class="frog-mouth"></span>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen game-screen is-hidden" data-bg="night">
+      <div id="backdrop" class="backdrop" aria-hidden="true">
+        <div class="backdrop-glow"></div>
+        <div class="window-grid"></div>
+        <div class="rain-layer"></div>
+      </div>
+
+      <header class="game-topbar">
+        <div>
+          <p id="chapter-kicker" class="chapter-kicker">第一章</p>
+          <h2 id="scene-title">新赛季，十条私信</h2>
+        </div>
+        <div class="top-actions">
+          <button id="status-btn" class="icon-btn" title="羁绊状态">羁绊</button>
+          <button id="log-btn" class="icon-btn" title="剧情回顾">回顾</button>
+          <button id="save-btn" class="icon-btn" title="保存进度">存档</button>
+          <button id="load-btn" class="icon-btn" title="读取进度">读档</button>
+          <button id="home-btn" class="icon-btn" title="返回标题">标题</button>
+        </div>
+      </header>
+
+      <section id="hub-panel" class="hub-panel is-hidden" aria-label="选择支线">
+        <div class="hub-heading">
+          <div>
+            <p class="chapter-kicker">自由行动</p>
+            <h2>今晚，先回应谁？</h2>
+          </div>
+          <div class="progress-orb"><strong id="route-count">0</strong><span>/ 10</span></div>
+        </div>
+        <p class="hub-intro">完成任意三段私会即可进入线下攻城夜；也可以先看完全部角色支线。</p>
+        <div id="route-grid" class="route-grid"></div>
+        <button id="finale-btn" class="finale-btn" disabled>再完成 3 段私会解锁修罗场</button>
+      </section>
+
+      <section id="stage" class="stage">
+        <div id="portrait" class="portrait is-hidden" aria-hidden="true">
+          <div class="portrait-halo"></div>
+          <div class="avatar-hair"></div>
+          <div class="avatar-face"><span class="avatar-glyph"></span></div>
+          <div class="avatar-neck"></div>
+          <div class="avatar-body"></div>
+          <div class="portrait-nameplate"><strong></strong><span></span></div>
+        </div>
+
+        <aside id="route-chip" class="route-chip is-hidden">
+          <span class="route-chip-dot"></span>
+          <div><small>当前支线</small><strong></strong></div>
+        </aside>
+
+        <div id="dialogue-wrap" class="dialogue-wrap">
+          <div id="speaker" class="speaker">旁白</div>
+          <div id="dialogue-box" class="dialogue-box" tabindex="0">
+            <div id="dialogue-text" class="dialogue-text"></div>
+            <div id="choice-list" class="choice-list is-hidden"></div>
+            <span id="next-indicator" class="next-indicator">NEXT</span>
+          </div>
+          <div class="dialogue-tools">
+            <button id="auto-btn" class="tool-btn">自动</button>
+            <button id="skip-btn" class="tool-btn">瞬显</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <div id="modal" class="modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-card">
+        <button id="modal-close" class="modal-close" aria-label="关闭">×</button>
+        <p id="modal-kicker" class="chapter-kicker">档案</p>
+        <h2 id="modal-title">羁绊状态</h2>
+        <div id="modal-body" class="modal-body"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
+
